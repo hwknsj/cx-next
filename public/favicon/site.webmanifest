@@ -1,0 +1,13 @@
+{
+  "name": "CX Next",
+  "short_name": "cx-next",
+  "icons": [
+    {
+      "src": "/favicons/favicon.ico",
+      "type": "image/ico"
+    }
+  ],
+  "theme_color": "#111111",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

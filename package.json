@@ -1,0 +1,55 @@
+{
+  "name": "cx-next",
+  "description": "Demonstration of emotion and next.js",
+  "author": {
+    "name": "joél torres",
+    "email": "joel.torres@nike.com",
+    "url": "https://github.com/jtor94_nike"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jtor94_nike/cx-next.git"
+  },
+  "private": true,
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --config .prettierrc --write '*/**.{js,jsx,ts,tsx}'",
+    "lint": "eslint --config .eslintrc --fix '*/**.{js,jsx,ts,tsx}'"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.1.3",
+    "@emotion/react": "^11.4.1",
+    "@emotion/server": "^11.4.0",
+    "@emotion/styled": "^11.3.0",
+    "classnames": "2.3.1",
+    "date-fns": "2.24.0",
+    "facepaint": "^1.2.1",
+    "gray-matter": "4.0.3",
+    "next": "latest",
+    "polished": "^4.1.3",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "remark": "14.0.1",
+    "remark-html": "14.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.5",
+    "@emotion/babel-plugin": "^11.3.0",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-twin": "^1.0.2",
+    "eslint": "^7.32.0",
+    "eslint-config-next": "^11.1.2",
+    "fs": "^0.0.1-security",
+    "prettier": "^2.4.1",
+    "tailwindcss": "^2.2.16",
+    "twin.macro": "^2.7.0"
+  },
+  "babelMacros": {
+    "twin": {
+      "preset": "emotion",
+      "includeClassNames": true
+    }
+  }
+}
