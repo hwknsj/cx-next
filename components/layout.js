@@ -1,8 +1,8 @@
-import Alert from './Alert'
-import Footer from './Footer'
-import Header from './Header'
-import Meta from './Meta'
-import Container from './Container'
+import Alert from '@/components/Alert'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import Meta from '@/components/Meta'
+import Container from '@/components/Container'
 
 const Layout = ({ preview, children }) => {
   return (

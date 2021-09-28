@@ -1,5 +1,5 @@
 import { CMS_NAME } from '../lib/constants'
-// import Title from './styled/Title'
+// import Title from '@/styled/Title'
 
 const Intro = () => (
   <section className='flex flex-col items-center mt-16 mb-16 md:flex-row md:justify-between md:mb-12'>

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
-import Title from './styled/Title'
+import Title from '@/styled/Title'
 // import { css } from '@emotion/react'
 
 import tw from 'twin.macro'

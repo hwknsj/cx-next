@@ -1,8 +1,8 @@
 import { css, Global } from '@emotion/react'
-import { theme } from './theme'
-import { fontFaces } from './fonts'
+import { theme } from '@/styles/theme'
+import { fontFaces } from '@/styles/fonts'
 import facepaint from 'facepaint'
-import tw from 'twin.macro'
+// import tw from 'twin.macro'
 // import styled from '@emotion/styled'
 
 const breakpoints = [320, 360, 375, 600, 959, 960, 1440, 1920]

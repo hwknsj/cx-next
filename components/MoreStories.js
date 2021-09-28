@@ -1,4 +1,4 @@
-import PostPreview from './PostPreview'
+import PostPreview from '@/components/PostPreview'
 
 const MoreStories = ({ posts }) => (
   <section>

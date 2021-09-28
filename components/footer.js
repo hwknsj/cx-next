@@ -1,7 +1,7 @@
-import Container from './Container'
+import Container from '@/components/Container'
 import styled from '@emotion/styled'
 // import { theme } from '@/styles/theme'
-import { REPO_URL } from '../lib/constants'
+import { REPO_URL } from '@/lib/constants'
 
 const FooterStyled = styled.footer`
   background-color: ${({ theme }) => theme.colors.grey5};

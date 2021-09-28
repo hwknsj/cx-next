@@ -1,7 +1,7 @@
 import { css } from '@emotion/css'
 import styled from '@emotion/styled'
 import Link from 'next/link'
-import { hueFlip, rotate, rotate3d } from './Animations'
+import { hueFlip, rotate, rotate3d } from '@/styled/Animations'
 
 const TitleStyles = styled.h1`
   display: flex;

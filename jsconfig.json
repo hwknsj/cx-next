@@ -6,7 +6,12 @@
       "@/styles/*": ["styles/*"],
       "@/lib/*": ["lib/*"],
       "@/pages/*": ["pages/*"],
-      "@/posts/*": ["_posts/*"]
+      "@/posts/*": ["_posts/*"],
+      "@/styled/*": ["components/styled/*"],
+      "@/public/*": ["public/*"],
+      "@/assets/*": ["public/assets/*"],
+      "@/fonts/*": ["public/fonts/*"],
+      "@/blog/*": ["public/assets/blog/*"]
     }
   }
 }

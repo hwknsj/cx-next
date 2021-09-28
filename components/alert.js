@@ -1,6 +1,6 @@
-import Container from './Container'
+import Container from '@/components/Container'
 import cn from 'classnames'
-import { REPO_URL } from '../lib/constants'
+import { REPO_URL } from '@/lib/constants'
 
 const { NODE_ENV } = process.env
 

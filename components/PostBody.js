@@ -1,4 +1,4 @@
-import markdownStyles from './markdown-styles.module.css'
+import markdownStyles from '@/components/styled/Markdown'
 
 const PostBody = ({ content }) => {
   return (

@@ -1,4 +1,3 @@
-// import { Icon } from '@nike/epic-react-ui'
 import tw, { styled } from 'twin.macro'
 import Link from 'next/link'
 import Img from 'next/image'
@@ -42,7 +41,7 @@ export const InnerMost = tw.div`
     lg:justify-start
 `
 export const DropDown = styled.div(props => [
-  tw`lg:flex flex-grow items-center`,
+  tw`items-center flex-grow lg:flex`,
   props.open ? tw`flex` : tw`hidden`
 ])
 

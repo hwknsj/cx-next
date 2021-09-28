@@ -1,5 +1,5 @@
-import { globalStyles } from '../styles/globalStyles'
-import { theme } from '../styles/theme'
+import { globalStyles } from '@/styles/globalStyles'
+import { theme } from '@/styles/theme'
 import { ThemeProvider } from '@emotion/react'
 import Head from 'next/head'
 import { GlobalStyles as TWGlobal } from 'twin.macro'
