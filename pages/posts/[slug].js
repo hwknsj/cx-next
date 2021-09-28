@@ -4,10 +4,10 @@ import Container from '@/components/Container'
 import PostBody from '@/components/PostBody'
 import PostHeader from '@/components/PostHeader'
 import Layout from '@/components/Layout'
-import { getPostBySlug, getAllPosts } from '../../lib/api'
+import { getPostBySlug, getAllPosts } from '@/lib/api'
 import PostTitle from '@/components/PostTitle'
 import Head from 'next/head'
-import markdownToHtml from '../../lib/markdownToHtml'
+import markdownToHtml from '@/lib/markdownToHtml'
 
 const Post = ({ post, preview }) => {
   const router = useRouter()

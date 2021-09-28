@@ -7,7 +7,7 @@ import { getAllPosts } from '@/lib/api'
 import Head from 'next/head'
 
 const Index = ({ allPosts }) => {
-  const heroPost = allPosts[0]
+  const latestPost = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
     <Layout>
@@ -16,14 +16,14 @@ const Index = ({ allPosts }) => {
       </Head>
       <Container>
         <Intro />
-        {heroPost && (
+        {latestPost && (
           <HeroPost
-            title={heroPost.title}
-            coverImage={heroPost.coverImage}
-            date={heroPost.date}
-            author={heroPost.author}
-            slug={heroPost.slug}
-            excerpt={heroPost.excerpt}
+            title={latestPost.title}
+            coverImage={latestPost.coverImage}
+            date={latestPost.date}
+            author={latestPost.author}
+            slug={latestPost.slug}
+            excerpt={latestPost.excerpt}
           />
         )}
         {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
