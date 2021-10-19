@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import styled from '@emotion/styled'
 import Title from '@/styled/Title'
-// import { css } from '@emotion/react'
+import { css } from '@emotion/react'
 
 import tw from 'twin.macro'
 import Img from 'next/image'
@@ -32,6 +32,35 @@ const Nav = styled.nav`
   align-items: center;
   /* justify-content: space-between; */
 `
+
+// prettier can format this format this for us
+// it follows very familiar JS Object notation
+// !!WE ALL KNOW AND USE JAVASCRIPT ALL THE TIME
+// ?? who ever heard stylus before this job
+const HeaderStyles = styled.header`
+  background: white;
+  height: 40rem;
+  text-align: center;
+  .logo {
+    width: 100px;
+  }
+`
+// const TitleStyled = styled.Title`
+const epicTitleStyles = css`
+  background: white;
+  height: 40rem;
+  text-align: center;
+  .logo {
+    width: 100px;
+  }
+`
+
+const titleStyles = {
+  fontWeight: 'bold',
+  fontFamily: 'Helvetica Neue',
+  lineHeight: '1.23rem'
+}
+
 const Swoosh = styled.span`
   align-self: center;
   box-align: center;
@@ -71,6 +100,9 @@ export const ListItem = styled.li`
 const StyledHeader = styled.header`
   display: flex;
   width: 100%;
+  .title {
+    /* adjust epic styles */
+  }
 `
 
 const Header = () => (
@@ -78,7 +110,9 @@ const Header = () => (
     <Swoosh>
       <Img className='logo' src='/assets/logo.svg' height={100} width={120} />
     </Swoosh>
-    <Title className='title'>Nike CX</Title>
+    <Title className='title' styles={epicTitleStyles}>
+      Nike CX
+    </Title>
     <Nav>
       <LinkContainer>
         {navLinks.map(({ text, path }) => (

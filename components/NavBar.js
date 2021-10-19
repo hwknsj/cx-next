@@ -136,13 +136,15 @@ export const Bar = tw.div`
     w-8 h-1 bg-black mb-1 align-middle
 `
 
-const NavBar = props => (
-  <Nav>
-    <Swoosh>
-      <Img className='logo' src='/assets/logo.svg' height={40} width={80} />
-    </Swoosh>
-    <InnerNav>
-      {/* <Img
+const NavBar = props => {
+  console.log({ props })
+  return (
+    <Nav>
+      <Swoosh>
+        <Img className='logo' src='/assets/logo.svg' height={40} width={80} />
+      </Swoosh>
+      <InnerNav>
+        {/* <Img
             src='/assets/logo.svg'
             alt='logo'
             width={100}
@@ -150,17 +152,18 @@ const NavBar = props => (
             placeholder='none'
           /> */}
 
-      <LinkContainer>
-        {navLinks.map(({ text, path }) => (
-          <ListItem key={text}>
-            <Link href={path}>
-              <a>{text}</a>
-            </Link>
-          </ListItem>
-        ))}
-      </LinkContainer>
-    </InnerNav>
-  </Nav>
-)
+        <LinkContainer>
+          {navLinks.map(({ text, path }) => (
+            <ListItem key={text}>
+              <Link href={path}>
+                <a>{text}</a>
+              </Link>
+            </ListItem>
+          ))}
+        </LinkContainer>
+      </InnerNav>
+    </Nav>
+  )
+}
 
 export default NavBar

@@ -1,5 +1,5 @@
 import { css, Global } from '@emotion/react'
-import { theme } from '@/styles/theme'
+import { theme } from '@/styles/baseTheme'
 import { fontFaces } from '@/styles/fonts'
 import facepaint from 'facepaint'
 // import tw from 'twin.macro'
@@ -11,7 +11,7 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 const fonts = fontFaces.map(font => ({ ...font }))
 
-const cssStyles = css`
+const cssStyles = theme => css`
   ${fonts}
   html {
     box-sizing: border-box;
@@ -152,6 +152,8 @@ const cssStyles = css`
   }
 `
 
-export const globalStyles = <Global styles={cssStyles} />
+export const globalStyles = (themeSetting = 'light') => (
+  <Global styles={cssStyles(theme(themeSetting))} />
+)
 // globalStyles.displayName = `globalStyles`
 // export { globalStyles }

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+// import { Image } from 'cloudinary-react'
 import styled from '@emotion/styled'
 
 const AvatarStyles = styled.figure`
