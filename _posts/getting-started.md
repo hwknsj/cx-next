@@ -53,3 +53,9 @@ render(
   </div>
 )
 ```
+
+```sh
+stylus --compress styles/normalize.styl --out styles/normalize.css
+# in globalStyles.js
+# import normalize from 'normalize.css'
+```

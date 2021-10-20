@@ -14,7 +14,7 @@ const EDSPage = ({ allPosts }) => {
         <title>Emotion & Enterprise</title>
       </Head>
       <Intro />
-      {<Hero />}
+      <Hero />
       <Container>
         {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
       </Container>

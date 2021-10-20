@@ -27,7 +27,7 @@ const Nav = styled.nav`
   flex-direction: row;
   align-content: center;
   align-items: center;
-  padding: 0 2rem;
+  padding: 0 4rem;
 `
 
 const switchStyles = css`
