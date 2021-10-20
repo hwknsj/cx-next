@@ -2,6 +2,7 @@
 import DateFormatter from '@/components/DateFormatter'
 import CoverImage from '@/components/CoverImage'
 // import Link from 'next/link'
+import { css } from '@emotion/react'
 import PostTitle from '@/components/PostTitle'
 import styled from '@emotion/styled'
 
@@ -23,32 +24,31 @@ const PostPreviewStyles = styled.article`
   } */
   p.excerpt {
     text-align: justify;
+    ${({ theme }) => css({ ...theme.typeography.body3 })};
   }
 `
 
-const PostPreview = ({ title, coverImage, date, excerpt, author, slug }) => {
-  return (
-    <PostPreviewStyles>
-      <div className='mb-5'>
-        <CoverImage
-          slug={slug}
-          title={title}
-          src={coverImage}
-          height={278}
-          width={556}
-        />
-      </div>
-      <PostTitle
-        as={`/posts/${slug}`}
-        href='/posts/[slug]'
-        subtitle={<DateFormatter dateString={date} />}
-      >
-        {title}
-      </PostTitle>
-      <p className='excerpt'>{excerpt}</p>
-      {/* <Avatar name={author.name} picture={author.picture} /> */}
-    </PostPreviewStyles>
-  )
-}
+const PostPreview = ({ title, coverImage, date, excerpt, author, slug }) => (
+  <PostPreviewStyles>
+    {/* <div className='mb-5'> */}
+    <CoverImage
+      slug={slug}
+      title={title}
+      src={coverImage}
+      height={278}
+      width={556}
+    />
+    {/* </div> */}
+    <PostTitle
+      as={`/posts/${slug}`}
+      href='/posts/[slug]'
+      subtitle={<DateFormatter dateString={date} />}
+    >
+      {title}
+    </PostTitle>
+    <p className='excerpt'>{excerpt}</p>
+    {/* <Avatar name={author.name} picture={author.picture} /> */}
+  </PostPreviewStyles>
+)
 
 export default PostPreview

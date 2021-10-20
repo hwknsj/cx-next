@@ -1,7 +1,9 @@
 import { css, Global } from '@emotion/react'
 import { theme } from '@/styles/theme'
 import { fontFaces } from '@/styles/fonts'
+import { lighten, darken } from 'polished'
 import facepaint from 'facepaint'
+import { useTheme } from '@/lib/ThemeContext'
 // import tw from 'twin.macro'
 // import styled from '@emotion/styled'
 
@@ -11,7 +13,7 @@ const mq = facepaint(breakpoints.map(bp => `@media (min-width: ${bp}px)`))
 
 const fonts = fontFaces.map(font => ({ ...font }))
 
-const cssStyles = css`
+const cssStyles = theme => css`
   ${fonts}
   html {
     box-sizing: border-box;
@@ -31,19 +33,22 @@ const cssStyles = css`
     min-height: 100%;
     font-family: ${theme.typeography.fontFamily};
     font-size: 1.6rem;
+    color: ${theme.colors.textPrimary};
   }
   main {
-    ${mq({
-      padding: [
-        '0 1rem ',
-        '0 1rem',
-        '0 1rem',
-        '1rem 2rem',
-        '1rem 4rem',
-        '2rem 8rem',
-        '4rem 16rem'
-      ]
-    })}
+    ${css(
+      mq({
+        padding: [
+          '0 1rem ',
+          '0 1rem',
+          '0 1rem',
+          '1rem 2rem',
+          '1rem 4rem',
+          '2rem 8rem',
+          '4rem 16rem'
+        ]
+      })
+    )}
   }
   footer {
     padding: 0;
@@ -90,7 +95,7 @@ const cssStyles = css`
   h5,
   h6 {
     small {
-      color: ${theme.colors.grey1};
+      color: ${theme.colors.textSecondary};
     }
     &:hover {
       text-decoration: none;
@@ -102,13 +107,15 @@ const cssStyles = css`
   article,
   main,
   table {
+    color: ${theme.colors.textPrimary};
     a {
       color: ${theme.colors.link};
-      transition: 0.2s color ${theme.cubicBezier} 0.2s text-decoration
-        ${theme.cubicBezier};
+      transition: color 0.2s ${theme.cubicBezier},
+        text-decoration 0.2s ${theme.cubicBezier};
       &:hover {
         text-decoration: underline;
         cursor: pointer;
+        color: ${darken('0.2', theme.colors.link)};
       }
       h1,
       h2,
@@ -116,7 +123,7 @@ const cssStyles = css`
       h4,
       h5,
       h6 {
-        color: ${theme.colors.primary};
+        color: ${theme.colors.textPrimary};
         transition: color 0.2s ${theme.cubicBezier};
         text-decoration: none;
         &:hover {
@@ -150,8 +157,17 @@ const cssStyles = css`
   .body3 {
     ${css({ ...theme.typeography.body3 })}
   }
+  .title1 {
+    ${css({ ...theme.typeography.title1 })}
+  }
+  .title2 {
+    ${css({ ...theme.typeography.title2 })}
+  }
 `
 
-export const globalStyles = <Global styles={cssStyles} />
-// globalStyles.displayName = `globalStyles`
-// export { globalStyles }
+export const GlobalStyles = () => {
+  const { dark } = useTheme()
+  const computedTheme = theme(dark)
+  const styles = cssStyles(computedTheme)
+  return <Global styles={styles} />
+}

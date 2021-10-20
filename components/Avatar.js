@@ -1,23 +1,23 @@
 import Image from 'next/image'
+// import { Image } from 'cloudinary-react'
 import styled from '@emotion/styled'
 
 const AvatarStyles = styled.figure`
   position: relative;
   display: flex;
   align-items: center;
-  border-left: 2px solid ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.textPrimary};
+  border-left: 2px solid ${({ theme }) => theme.colors.grey1};
+  .avatar {
+    object-fit: contain;
+    max-height: 100px;
+  }
 `
 
 const Avatar = ({ name, picture }) => (
   <AvatarStyles>
-    <Image
-      src={picture}
-      width={100}
-      height={100}
-      className='h-auto mr-4'
-      objectFit
-      alt={name}
-    />
+    {/* eslint-disable-next-line */}
+    <img src={picture} className='h-auto mx-4 avatar' alt={name} />
     <figcaption className='text-xl font-bold'>{name}</figcaption>
   </AvatarStyles>
 )

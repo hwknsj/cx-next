@@ -7,8 +7,9 @@ const CoverImageStyles = styled.figure`
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  max-width: 1280px;
-  img {
+  img,
+  .cover-img {
+    width: 100%;
     object-fit: cover;
   }
   position: relative;
@@ -21,12 +22,6 @@ const CoverImageStyles = styled.figure`
   &:hover {
     filter: brightness(0.8);
   }
-  /* a {
-    transition: box-shadow 0.5s ${({ theme }) => theme.cubicBezier};
-    &:hover {
-      box-shadow: 4px 4px 24px 4px ${({ theme }) => theme.colors.hoverBg};
-    }
-  } */
 `
 
 const CoverImage = ({ title, src, slug, height, width }) => {
@@ -43,8 +38,17 @@ const CoverImage = ({ title, src, slug, height, width }) => {
       height={height}
     />
   )
+  const img = (
+    // eslint-disable-next-line
+    <img
+      src={src}
+      alt={`${title} cover image`}
+      aria-label={`${title} cover image`}
+      className={`cover-img`}
+    />
+  )
   return (
-    <CoverImageStyles>
+    <CoverImageStyles height={height}>
       {slug ? (
         <Link as={`/posts/${slug}`} href='/posts/[slug]'>
           <a aria-label={title}>{image}</a>

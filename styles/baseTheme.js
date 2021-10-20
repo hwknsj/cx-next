@@ -6,13 +6,8 @@ const colorSchema = {
     secondary: '#6A6A6A',
     textPrimary: '#111111',
     textSecondary: '#757575',
-    btnPrimary: '#FFFFFF',
-    btnSecondary: '#111111',
-    button: {
-      bgPrimary: '#111111',
-      bgSecondary: '#FFFFFF'
-    },
-    link: '#0861B5',
+    btnPrimary: '#111111',
+    btnSecondary: '#FFFFFF',
     black: '#111111', // Used for default text, icons and backgrounds.
     white: '#FFFFFF', // Used for backgrounds and icons.
     grey1: '#757575', // Used for disabled button text and product cards.
@@ -30,6 +25,7 @@ const colorSchema = {
     kleinBlue: 'rgb(69, 68, 147)',
     blue: '#0861B5',
     pink: '#FF4081',
+    link: '#0861B5',
     red2: '#FF0015',
     gradient:
       'linear-gradient(113.7deg, #FF0015 3.64%, #FE5000 50.92%, #FF6A00 97.26%)',
@@ -62,10 +58,6 @@ const colorSchema = {
     textSecondary: '#B2B2B2',
     btnPrimary: '#FFFFFF',
     btnSecondary: '#757575',
-    button: {
-      bgPrimary: '#FFFFFF',
-      bgSecondary: '#111111'
-    },
     link: '#3C8DD7',
     black: '#111111', // Used for default text, icons and backgrounds.
     white: '#FFFFFF', // Used for backgrounds and icons.
@@ -109,11 +101,6 @@ const colorSchema = {
       border: '#895600'
     }
   }
-}
-
-const colorPalette = (dark = false) => {
-  if (dark) return colorSchema.dark
-  return colorSchema.light
 }
 
 const typeographySchema = colors => ({
@@ -241,19 +228,26 @@ const typeographySchema = colors => ({
     fontSize: '1.6rem',
     fontWeight: 500,
     lineHeight: '2.4rem',
-    fontFamily: helveticaNeue
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary,
+    backgroundColor: colors.grey5,
+    'color:disabled': colors.grey1
   },
   button2: {
     fontSize: '1.4rem',
     fontWeight: 500,
     lineHeight: '2.0rem',
-    fontFamily: helveticaNeue
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary,
+    'color:disabled': colors.grey1
   },
   button3: {
     fontSize: '1.2rem',
     fontWeight: 500,
     lineHeight: '1.8rem',
-    fontFamily: helveticaNeue
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary,
+    'color:disabled': colors.grey1
   },
   titleFont: helveticaNeue,
   subtitleFont: helveticaNeue,
@@ -262,55 +256,21 @@ const typeographySchema = colors => ({
   buttonFont: helveticaNeue
 })
 
-const buttonSchema = (colors, typeography, dark = false) => ({
-  primary: {
-    color: colors.btnPrimary,
-    backgroundColor: colors.button.bgPrimary,
-    border: `1px solid ${colors.button.bgPrimary}`,
-    '&:active': {
-      backgroundColor: colors.grey1
-    },
-    '&:disabled': {
-      backgroundColor: colors.grey4,
-      color: dark ? colors.grey3 : colors.grey2
-    }
-  },
-  secondary: {
-    color: colors.btnSecondary,
-    backgroundColor: colors.button.bgSecondary,
-    border: `1px solid ${dark ? colors.grey3 : colors.grey2}`,
-    '&:active': {
-      backgroundColor: dark ? colors.black : colors.white,
-      border: `1px solid ${dark ? colors.white : colors.black}`
-    },
-    '&:disabled': {
-      backgroundColor: dark ? colors.black : colors.white,
-      border: `1px solid ${dark ? colors.grey3 : colors.grey2}`,
-      color: dark ? colors.grey : colors.grey1
-    }
-  },
-  small: {
-    ...typeography.button3,
-    height: '3.6rem',
-    borderRadius: '3rem',
-    padding: '0.6rem 1.2rem',
-    minWidth: '9rem'
-  },
-  medium: {
-    ...typeography.button2,
-    height: '4.8rem',
-    borderRadius: '3rem',
-    padding: '1.2rem 2.4rem',
-    minWidth: '9.8rem'
-  },
-  large: {
-    ...typeography.button1,
-    height: '6rem',
-    borderRadius: '3rem',
-    padding: '1.7rem 8rem',
-    width: '32.7rem'
-  }
-})
+// const buttons = theme => ({
+//   // IDEA: is 'theme' going to be 'light' / 'dark' or is there enough overlap
+//   // that it makes sense to 'apply' light or dark specifications over some defaults?
+//   // fucking ux should do this shit mane: just give me the base, light, and dark variables...
+//   default: {
+//     primary: {
+//       backgroundColor: theme.colors.btnPrimary
+
+//     },
+//     secondary: {
+//       background
+//     }
+//   },
+
+// })
 
 const linkSchema = (colors, typeography) => ({
   color: colors.link,
@@ -331,20 +291,113 @@ const linkSchema = (colors, typeography) => ({
   }
 })
 
-// build our theme!
-export const theme = (dark = false) => {
-  let colors = colorPalette(dark)
-  let typeography = typeographySchema(colors)
-  let links = linkSchema(colors, typeography)
-  let buttons = buttonSchema(colors, typeography, dark)
+// const baseStyles = theme => {
+//   colors: colors[theme],
+//   typeography: ${({ theme }) => typeography(theme)};
+// }
+
+// TODO: convert to function with dark/light param
+// HACK: just make theme a function or w/e and be like
+// if dark object.assign(darkVerisons)
+
+// NOTE: could use a sort of themeBuilder function
+export const theme = (setting = 'light') => {
+  const colors = colorSchema[setting]
+  const typeography = typeographySchema(colors)
+  const links = linkSchema(colors, typeography)
   return {
-    mode: dark ? 'dark' : 'light',
     colors,
     typeography,
     links,
-    buttons,
     cubicBezier: 'cubic-bezier(0.4, 0.01, 0.165, 0.99)'
   }
 }
 
+// export const themeDark = {
+//   black: '#111111',
+//   white: '#FFFFFF',
+//   grey1: '#B2B2B2',
+//   grey2: '#8B8B8B',
+//   grey3: '#757575',
+//   grey4: '#3A3A3A',
+//   grey5: '#222222',
+//   green: '#41A139',
+//   red: '#FF4D29'
+// }
+
+// export const dark = {
+//   colors: {
+//     primary: '#6A6A6A',
+//     secondary: '#111111',
+//     textPrimary: '#FFFFFF',
+//     textSecondary: '#B2B2B2',
+//     link: '#3C8DD7',
+//     black: '#111111', // Used for default text, icons and backgrounds.
+//     white: '#FFFFFF', // Used for backgrounds and icons.
+//     grey1: '#B2B2B2', // Used for disabled button text and product cards.
+//     grey2: '#8B8B8B', // Used for unselected icons and states.
+//     grey3: '#757575', // Used for borders, dividers and keylines.
+//     grey4: '#3A3A3A', // Used for product image backgrounds.
+//     grey5: '#222222', // Used for product image backgrounds.
+//     green: '#41A139', // Used for success states and confirmations.
+//     red: '#FF4D29', // Used for error states.
+//     orange: '#FE5000',
+//     lightGreen: '#76FF03',
+//     indigo: '#304FFE',
+//     deepPurple: '#651FFF',
+//     deepOrange: '#FF3d00',
+//     kleinBlue: 'rgb(69, 68, 147)',
+//     blue: '#0861B5',
+//     pink: '#FF4081',
+//     red2: '#FF0015',
+//     gradient:
+//       'linear-gradient(113.7deg, #FF0015 3.64%, #FE5000 50.92%, #FF6A00 97.26%)',
+//     bg: '#111111',
+//     hoverBg: '#3A3A3A',
+//     hoverBorder: '#B2B2B2',
+//     focusBorder: '#51A9E8',
+//     activeBg: '#222222',
+//     activeBorder: '#FFFFFF',
+//     success: {
+//       background: '#128A09',
+//       text: '#1C7013',
+//       border: '#309E26'
+//     },
+//     danger: {
+//       background: '#D43F21',
+//       text: '#E16443',
+//       border: '#AD391F'
+//     },
+//     warning: {
+//       background: '#FACA40',
+//       text: '#BC7C00',
+//       border: '#895600'
+//     }
+//   }
+// }
+// it would be nice to spread over light theme if dark
+// const theme = (light = true) => {
+//   const baseTheme = {
+//     colors: light ? colors.light : { ...colors.light, ...colors.dark },
+//     typeographyr,
+//     // ...
+//     links,
+//     cubicBezier: 'cubic-bezier(0.4, 0.01, 0.165, 0.99)'
+//   }
+
+//   if (dark) {
+//   }
+
+//   return {
+//     colors,
+//     typeography,
+//     // ...
+//     links,
+//     cubicBezier: 'cubic-bezier(0.4, 0.01, 0.165, 0.99)'
+//   }
+// }
+
+// theme.colors.textPrimary = theme.colors.black
+
+// export default theme
 export default theme

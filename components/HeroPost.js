@@ -2,6 +2,7 @@ import Avatar from '@/components/Avatar'
 import DateFormatter from '@/components/DateFormatter'
 import CoverImage from '@/components/CoverImage'
 import PostTitle from '@/components/PostTitle'
+// import styled from '@emotion/styled'
 
 const HeroPost = ({ title, coverImage, date, excerpt, author, slug }) => (
   <section>

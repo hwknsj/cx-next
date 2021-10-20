@@ -1,21 +1,17 @@
-import Alert from '@/components/Alert'
 import Footer from '@/components/Footer'
-import Header from '@/components/Header'
+import Navbar from '@/components/Navbar'
 import Meta from '@/components/Meta'
 import Container from '@/components/Container'
 
-const Layout = ({ preview, children }) => {
-  return (
-    <>
-      <Meta />
-      <Container>
-        <Header />
-        <Alert preview={preview} />
-        <main>{children}</main>
-      </Container>
-      <Footer />
-    </>
-  )
-}
+const Layout = ({ children }) => (
+  <>
+    <Meta />
+    <Navbar />
+    <Container>
+      <main>{children}</main>
+    </Container>
+    <Footer />
+  </>
+)
 
 export default Layout

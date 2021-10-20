@@ -19,11 +19,10 @@ const PostTitleStyled = styled.h1`
 
 const PostSubtitleStyled = styled.small`
   ${({ theme }) => css({ ...theme.typeography.title4 })};
-  /* font-family: ${({ theme }) => theme.typeography.subtitleFont}; */
   display: block;
   margin-top: 1rem;
   margin-bottom: 1rem;
-  color: ${({ theme }) => theme.colors.grey1};
+  color: ${({ theme }) => theme.colors.textSecondary};
 `
 
 const PostTitle = ({ children, subtitle, as = null, href = null }) => (
