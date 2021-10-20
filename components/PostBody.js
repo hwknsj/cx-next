@@ -1,8 +1,9 @@
-import markdownStyles from '@/components/styled/Markdown'
+import MarkdownStyles from '@/components/styled/Markdown'
 
 const PostBody = ({ content }) => (
   <article
-    className={`${markdownStyles.markdown} mx-auto text-justify`}
+    css={MarkdownStyles}
+    className={`mx-auto text-justify`}
     dangerouslySetInnerHTML={{ __html: content }}
   />
 )

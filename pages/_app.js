@@ -1,14 +1,9 @@
-import { globalStyles } from '@/styles/globalStyles'
-import { theme } from '@/styles/baseTheme'
-import { ThemeProvider } from '@emotion/react'
-// import { CloudinaryContext } from 'cloudinary-react'
-import { useState } from 'react'
+import { GlobalStyles } from '@/styles/globalStyles'
 import Head from 'next/head'
 import { GlobalStyles as TWGlobal } from 'twin.macro'
+import { ThemeProvider } from '@/lib/ThemeContext'
 
 export default function MyApp({ Component, pageProps }) {
-  console.log({ pageProps })
-  const [themeMode, setThemeMode] = useState('light')
   return (
     <>
       <Head>
@@ -19,8 +14,8 @@ export default function MyApp({ Component, pageProps }) {
         <link rel='shortcut icon' href='/favicon/favicon.ico' />
       </Head>
       <TWGlobal />
-      {globalStyles('light')}
-      <ThemeProvider theme={theme(themeMode)}>
+      <ThemeProvider>
+        <GlobalStyles />
         <Component {...pageProps} />
       </ThemeProvider>
     </>

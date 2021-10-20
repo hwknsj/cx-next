@@ -1,16 +1,18 @@
 import Container from '@/components/Container'
 import cn from 'classnames'
+import { css, styled } from 'twin.macro'
 import { REPO_URL } from '@/lib/constants'
 
 const { NODE_ENV } = process.env
 
+const AlertStyles = styled.div`
+  ${({ theme }) => css({ ...theme.typeography.body2 })};
+  a {
+    ${({ theme }) => css({ ...theme.links.body2 })};
+  }
+`
 const Alert = ({ preview }) => (
-  <div
-    className={cn('border-b', {
-      'bg-accent-7 border-accent-7 text-white': preview,
-      'bg-accent-1 border-accent-2': !preview
-    })}
-  >
+  <AlertStyles className={cn('border-b')}>
     <Container>
       <p className='py-2 text-center'>
         <>
@@ -31,7 +33,7 @@ const Alert = ({ preview }) => (
         </>
       </p>
     </Container>
-  </div>
+  </AlertStyles>
 )
 
 export default Alert

@@ -1,10 +1,23 @@
 import Container from '@/components/Container'
 import styled from '@emotion/styled'
-// import { theme } from '@/styles/theme'
 import { REPO_URL } from '@/lib/constants'
 
 const FooterStyled = styled.footer`
-  background-color: ${({ theme }) => theme.colors.grey5};
+  background-color: ${({ theme }) => theme.colors.grey4};
+  a.btn {
+    background: ${({ theme }) =>
+      theme.mode === 'dark' ? theme.colors.white : theme.colors.black};
+    color: ${({ theme }) =>
+      theme.mode === 'dark' ? theme.colors.black : theme.colors.white};
+    border: 1px solid ${({ theme }) => theme.colors.black};
+    transition: background 0.1s ${({ theme }) => theme.cubicBezier}, color 0.1s;
+    &:hover {
+      background: ${({ theme }) =>
+        theme.mode === 'dark' ? theme.colors.grey3 : theme.colors.grey2};
+      color: ${({ theme }) =>
+        theme.mode === 'dark' ? theme.colors.white : theme.colors.black};
+    }
+  }
 `
 
 const Footer = () => (
@@ -20,7 +33,7 @@ const Footer = () => (
             href='https://nextjs.org/docs/basic-features/pages'
             target='_blank'
             rel='noopener noreferrer'
-            className='px-12 py-3 mx-3 mb-6 font-bold text-white transition-colors duration-200 bg-black border border-black hover:bg-white hover:text-black lg:px-8 lg:mb-0'
+            className='px-12 py-3 mx-3 mb-6 font-bold lg:px-8 lg:mb-0 btn'
           >
             Next.js
           </a>
@@ -29,7 +42,7 @@ const Footer = () => (
             href='https://emotion.sh'
             target='_blank'
             rel='noopener noreferrer'
-            className='px-12 py-3 mx-3 mb-6 font-bold text-white transition-colors duration-200 bg-black border border-black hover:bg-white hover:text-black lg:px-8 lg:mb-0'
+            className='px-12 py-3 mx-3 mb-6 font-bold lg:px-8 lg:mb-0 btn'
           >
             Emotion
           </a>

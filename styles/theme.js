@@ -1,9 +1,18 @@
 const helveticaNeue = `'Helvetica Neue', Helvetica, Arial, sans-serif`
 
-const theme = {
-  colors: {
+const colorSchema = {
+  light: {
     primary: '#111111',
     secondary: '#6A6A6A',
+    textPrimary: '#111111',
+    textSecondary: '#757575',
+    btnPrimary: '#FFFFFF',
+    btnSecondary: '#111111',
+    button: {
+      bgPrimary: '#111111',
+      bgSecondary: '#FFFFFF'
+    },
+    link: '#0861B5',
     black: '#111111', // Used for default text, icons and backgrounds.
     white: '#FFFFFF', // Used for backgrounds and icons.
     grey1: '#757575', // Used for disabled button text and product cards.
@@ -21,7 +30,6 @@ const theme = {
     kleinBlue: 'rgb(69, 68, 147)',
     blue: '#0861B5',
     pink: '#FF4081',
-    link: '#0861B5',
     red2: '#FF0015',
     gradient:
       'linear-gradient(113.7deg, #FF0015 3.64%, #FE5000 50.92%, #FF6A00 97.26%)',
@@ -47,147 +55,27 @@ const theme = {
       border: '#BC7C00'
     }
   },
-  typeography: {
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    bodyFontSize: '1.6rem',
-    displayFont: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-    display1: {
-      fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-      fontSize: '6.2rem'
+  dark: {
+    primary: '#6A6A6A',
+    secondary: '#111111',
+    textPrimary: '#FFFFFF',
+    textSecondary: '#B2B2B2',
+    btnPrimary: '#FFFFFF',
+    btnSecondary: '#757575',
+    button: {
+      bgPrimary: '#FFFFFF',
+      bgSecondary: '#111111'
     },
-    display2: {
-      fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-      fontSize: '5.6rem'
-    },
-    display3: {
-      fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-      fontSize: '4.8rem'
-    },
-    display4: {
-      fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-      fontSize: '4.0rem'
-    },
-    display5: {
-      fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-      fontSize: '2.4rem'
-    },
-    title1: {
-      fontSize: '4.8rem', // '3.6rem',
-      fontWeight: 500,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    title2: {
-      fontSize: '3.2rem',
-      fontWeight: 500,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    title3: {
-      fontSize: '2.8rem',
-      fontWeight: 500,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    title4: {
-      fontSize: '2.4rem',
-      fontWeight: 500,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    title5: {
-      fontSize: '2.0rem',
-      fontWeight: 500,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    title6: {
-      fontSize: '1.6rem',
-      fontWeight: 500,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    subtitle1: {
-      fontSize: '1.6rem',
-      fontWeight: 500,
-      lineHeight: '2.4rem',
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    subtitle2: {
-      fontSize: '1.4rem',
-      fontWeight: 500,
-      lineHeight: '2.0rem',
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    subtitle3: {
-      fontSize: '1.4rem',
-      lineHeight: '1.6rem',
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    body1: {
-      fontSize: '2.0rem',
-      lineHeight: '2.8rem',
-      fontWeight: 400,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    body2: {
-      fontSize: '1.6rem',
-      lineHeight: '2.4rem',
-      fontWeight: 400,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    body3: {
-      fontSize: '1.4rem',
-      lineHeight: '2.0rem',
-      fontWeight: 400,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    legal: {
-      fontSize: '1.2rem',
-      lineHeight: '1.8rem',
-      fontWeight: 400,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    label: {
-      fontSize: '1.0rem',
-      lineHeight: '1.2rem',
-      fontWeight: 400,
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    button1: {
-      fontSize: '1.6rem',
-      fontWeight: 500,
-      lineHeight: '2.4rem',
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    button2: {
-      fontSize: '1.4rem',
-      fontWeight: 500,
-      lineHeight: '2.0rem',
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    button3: {
-      fontSize: '1.2rem',
-      fontWeight: 500,
-      lineHeight: '1.8rem',
-      fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-    },
-    titleFont: helveticaNeue,
-    subtitleFont: helveticaNeue,
-    bodyFont: helveticaNeue,
-    legalFont: helveticaNeue,
-    buttonFont: helveticaNeue
-  },
-  cubicBezier: 'cubic-bezier(0.4, 0.01, 0.165, 0.99)'
-}
-
-const baseTheme = {
-  colors: {
-    primary: '#111111',
-    secondary: '#6A6A6A',
+    link: '#3C8DD7',
     black: '#111111', // Used for default text, icons and backgrounds.
     white: '#FFFFFF', // Used for backgrounds and icons.
-    grey1: '#757575', // Used for disabled button text and product cards.
-    grey2: '#CCCCCC', // Used for unselected icons and states.
-    grey3: '#E5E5E5', // Used for borders, dividers and keylines.
-    grey4: '#F5F5F5', // Used for product image backgrounds.
-    grey5: '#FAFAFA', // Used for product image backgrounds.
-    green: '#128A09', // Used for success states and confirmations.
-    red: '#D43F21', // Used for error states.
+    grey1: '#B2B2B2', // Used for disabled button text and product cards.
+    grey2: '#8B8B8B', // Used for unselected icons and states.
+    grey3: '#757575', // Used for borders, dividers and keylines.
+    grey4: '#3A3A3A', // Used for product image backgrounds.
+    grey5: '#222222', // Used for product image backgrounds.
+    green: '#41A139', // Used for success states and confirmations.
+    red: '#FF4D29', // Used for error states.
     orange: '#FE5000',
     lightGreen: '#76FF03',
     indigo: '#304FFE',
@@ -196,16 +84,15 @@ const baseTheme = {
     kleinBlue: 'rgb(69, 68, 147)',
     blue: '#0861B5',
     pink: '#FF4081',
-    link: '#0861B5',
     red2: '#FF0015',
     gradient:
       'linear-gradient(113.7deg, #FF0015 3.64%, #FE5000 50.92%, #FF6A00 97.26%)',
-    bg: '#FFFFFF',
-    hoverBg: '#F5F5F5',
-    hoverBorder: '#757575',
-    focusBorder: '#0861B5',
-    activeBg: '#E5E5E5',
-    activeBorder: '#111111',
+    bg: '#111111',
+    hoverBg: '#3A3A3A',
+    hoverBorder: '#B2B2B2',
+    focusBorder: '#51A9E8',
+    activeBg: '#222222',
+    activeBorder: '#FFFFFF',
     success: {
       background: '#128A09',
       text: '#1C7013',
@@ -213,285 +100,160 @@ const baseTheme = {
     },
     danger: {
       background: '#D43F21',
-      text: '#AD391F',
-      border: '#E16443'
+      text: '#E16443',
+      border: '#AD391F'
     },
     warning: {
       background: '#FACA40',
-      text: '#895600',
-      border: '#BC7C00'
+      text: '#BC7C00',
+      border: '#895600'
     }
   }
 }
-//   typeography: {
-//     fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-//     bodyFontSize: '1.6rem',
-//     displayFont: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-//     display1: {
-//       fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-//       fontSize: '6.2rem'
-//     },
-//     display2: {
-//       fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-//       fontSize: '5.6rem'
-//     },
-//     display3: {
-//       fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-//       fontSize: '4.8rem'
-//     },
-//     display4: {
-//       fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-//       fontSize: '4.0rem'
-//     },
-//     display5: {
-//       fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-//       fontSize: '2.4rem'
-//     },
-//     title1: {
-//       fontSize: '4.8rem', // '3.6rem',
-//       fontWeight: 500,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     title2: {
-//       fontSize: '3.2rem',
-//       fontWeight: 500,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     title3: {
-//       fontSize: '2.8rem',
-//       fontWeight: 500,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     title4: {
-//       fontSize: '2.4rem',
-//       fontWeight: 500,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     title5: {
-//       fontSize: '2.0rem',
-//       fontWeight: 500,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     title6: {
-//       fontSize: '1.6rem',
-//       fontWeight: 500,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     subtitle1: {
-//       fontSize: '1.6rem',
-//       fontWeight: 500,
-//       lineHeight: '2.4rem',
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     subtitle2: {
-//       fontSize: '1.4rem',
-//       fontWeight: 500,
-//       lineHeight: '2.0rem',
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     subtitle3: {
-//       fontSize: '1.4rem',
-//       lineHeight: '1.6rem',
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     body1: {
-//       fontSize: '2.0rem',
-//       lineHeight: '2.8rem',
-//       fontWeight: 400,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     body2: {
-//       fontSize: '1.6rem',
-//       lineHeight: '2.4rem',
-//       fontWeight: 400,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     body3: {
-//       fontSize: '1.4rem',
-//       lineHeight: '2.0rem',
-//       fontWeight: 400,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     legal: {
-//       fontSize: '1.2rem',
-//       lineHeight: '1.8rem',
-//       fontWeight: 400,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     label: {
-//       fontSize: '1.0rem',
-//       lineHeight: '1.2rem',
-//       fontWeight: 400,
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     button1: {
-//       fontSize: '1.6rem',
-//       fontWeight: 500,
-//       lineHeight: '2.4rem',
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     button2: {
-//       fontSize: '1.4rem',
-//       fontWeight: 500,
-//       lineHeight: '2.0rem',
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     button3: {
-//       fontSize: '1.2rem',
-//       fontWeight: 500,
-//       lineHeight: '1.8rem',
-//       fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`
-//     },
-//     titleFont: helveticaNeue,
-//     subtitleFont: helveticaNeue,
-//     bodyFont: helveticaNeue,
-//     legalFont: helveticaNeue,
-//     buttonFont: helveticaNeue
-//   },
-//   cubicBezier: 'cubic-bezier(0.4, 0.01, 0.165, 0.99)'
-// }
 
-const typeography = theme => ({
-  fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
+const colorPalette = (dark = false) => {
+  if (dark) return colorSchema.dark
+  return colorSchema.light
+}
+
+const typeographySchema = colors => ({
+  fontFamily: helveticaNeue,
   bodyFontSize: '1.6rem',
   displayFont: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
-  color: theme.colors.textPrimary,
+  color: colors.textPrimary,
   display1: {
     fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
     fontSize: '6.2rem',
-    color: theme.colors.textPrimary
+    color: colors.textPrimary
   },
   display2: {
     fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
     fontSize: '5.6rem',
-    color: theme.colors.textPrimary
+    color: colors.textPrimary
   },
   display3: {
     fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
     fontSize: '4.8rem',
-    color: theme.colors.textPrimary
+    color: colors.textPrimary
   },
   display4: {
     fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
     fontSize: '4.0rem',
-    color: theme.colors.textPrimary
+    color: colors.textPrimary
   },
   display5: {
     fontFamily: `'Nike Futura ND', 'Nike Futura', 'Futura', Arial, sans-serif`,
     fontSize: '2.4rem',
-    color: theme.colors.textPrimary
+    color: colors.textPrimary
   },
   title1: {
     fontSize: '4.8rem', // '3.6rem',
     fontWeight: 500,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   title2: {
     fontSize: '3.2rem',
     fontWeight: 500,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   title3: {
     fontSize: '2.8rem',
     fontWeight: 500,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   title4: {
     fontSize: '2.4rem',
     fontWeight: 500,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   title5: {
     fontSize: '2.0rem',
     fontWeight: 500,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   title6: {
     fontSize: '1.6rem',
     fontWeight: 500,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   subtitle1: {
     fontSize: '1.6rem',
     fontWeight: 500,
     lineHeight: '2.4rem',
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   subtitle2: {
     fontSize: '1.4rem',
     fontWeight: 500,
     lineHeight: '2.0rem',
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   subtitle3: {
     fontSize: '1.4rem',
     lineHeight: '1.6rem',
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   body1: {
     fontSize: '2.0rem',
     lineHeight: '2.8rem',
     fontWeight: 400,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   body2: {
     fontSize: '1.6rem',
     lineHeight: '2.4rem',
     fontWeight: 400,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   body3: {
     fontSize: '1.4rem',
     lineHeight: '2.0rem',
     fontWeight: 400,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   legal: {
     fontSize: '1.2rem',
     lineHeight: '1.8rem',
     fontWeight: 400,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   label: {
     fontSize: '1.0rem',
     lineHeight: '1.2rem',
     fontWeight: 400,
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue,
+    color: colors.textPrimary
   },
   button1: {
     fontSize: '1.6rem',
     fontWeight: 500,
     lineHeight: '2.4rem',
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue
   },
   button2: {
     fontSize: '1.4rem',
     fontWeight: 500,
     lineHeight: '2.0rem',
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue
   },
   button3: {
     fontSize: '1.2rem',
     fontWeight: 500,
     lineHeight: '1.8rem',
-    fontFamily: `'Helvetica Neue', Helvetica, Arial, sans-serif`,
-    color: theme.colors.textPrimary
+    fontFamily: helveticaNeue
   },
   titleFont: helveticaNeue,
   subtitleFont: helveticaNeue,
@@ -500,94 +262,89 @@ const typeography = theme => ({
   buttonFont: helveticaNeue
 })
 
-const links = theme => ({
-  color: theme.colors.link,
+const buttonSchema = (colors, typeography, dark = false) => ({
+  primary: {
+    color: colors.btnPrimary,
+    backgroundColor: colors.button.bgPrimary,
+    border: `1px solid ${colors.button.bgPrimary}`,
+    '&:active': {
+      backgroundColor: colors.grey1
+    },
+    '&:disabled': {
+      backgroundColor: colors.grey4,
+      color: dark ? colors.grey3 : colors.grey2
+    }
+  },
+  secondary: {
+    color: colors.btnSecondary,
+    backgroundColor: colors.button.bgSecondary,
+    border: `1px solid ${dark ? colors.grey3 : colors.grey2}`,
+    '&:active': {
+      backgroundColor: dark ? colors.black : colors.white,
+      border: `1px solid ${dark ? colors.white : colors.black}`
+    },
+    '&:disabled': {
+      backgroundColor: dark ? colors.black : colors.white,
+      border: `1px solid ${dark ? colors.grey3 : colors.grey2}`,
+      color: dark ? colors.grey : colors.grey1
+    }
+  },
+  small: {
+    ...typeography.button3,
+    height: '3.6rem',
+    borderRadius: '3rem',
+    padding: '0.6rem 1.2rem',
+    minWidth: '9rem'
+  },
+  medium: {
+    ...typeography.button2,
+    height: '4.8rem',
+    borderRadius: '3rem',
+    padding: '1.2rem 2.4rem',
+    minWidth: '9.8rem'
+  },
+  large: {
+    ...typeography.button1,
+    height: '6rem',
+    borderRadius: '3rem',
+    padding: '1.7rem 8rem',
+    width: '32.7rem'
+  }
+})
+
+const linkSchema = (colors, typeography) => ({
+  color: colors.link,
   body1: {
-    ...theme.typeography.body1,
-    color: theme.colors.link,
+    ...typeography.body1,
+    color: colors.link,
     '&:hover': { textDecoration: 'underline' }
   },
   body2: {
-    ...theme.typeography.body1,
-    color: theme.colors.link,
+    ...typeography.body1,
+    color: colors.link,
     '&:hover': { textDecoration: 'underline' }
   },
   body3: {
-    ...theme.typeography.body1,
-    color: theme.colors.link,
+    ...typeography.body1,
+    color: colors.link,
     '&:hover': { textDecoration: 'underline' }
   }
 })
 
-theme.typeography = typeography(theme)
-theme.links = links
-
-// const themeFunction = theme => ({ ...baseTheme, ...typeography(theme), ...links(theme)})
-
-// export default theme
-export { theme }
-
-// TODO: convert to function with dark/light param
-
-export const themeDark = {
-  black: '#111111',
-  white: '#FFFFFF',
-  grey1: '#B2B2B2',
-  grey2: '#8B8B8B',
-  grey3: '#757575',
-  grey4: '#3A3A3A',
-  grey5: '#222222',
-  green: '#41A139',
-  red: '#FF4D29'
-}
-
-const darkColors = {
-  primary: '#6A6A6A',
-  secondary: '#111111',
-  textPrimary: '#FFFFFF',
-  textSecondary: '#B2B2B2',
-  btnPrimary: '#FFFFFF',
-  btnSecondary: '#757575',
-  link: '#3C8DD7',
-  black: '#111111', // Used for default text, icons and backgrounds.
-  white: '#FFFFFF', // Used for backgrounds and icons.
-  grey1: '#B2B2B2', // Used for disabled button text and product cards.
-  grey2: '#8B8B8B', // Used for unselected icons and states.
-  grey3: '#757575', // Used for borders, dividers and keylines.
-  grey4: '#3A3A3A', // Used for product image backgrounds.
-  grey5: '#222222', // Used for product image backgrounds.
-  green: '#41A139', // Used for success states and confirmations.
-  red: '#FF4D29', // Used for error states.
-  orange: '#FE5000',
-  lightGreen: '#76FF03',
-  indigo: '#304FFE',
-  deepPurple: '#651FFF',
-  deepOrange: '#FF3d00',
-  kleinBlue: 'rgb(69, 68, 147)',
-  blue: '#0861B5',
-  pink: '#FF4081',
-  red2: '#FF0015',
-  gradient:
-    'linear-gradient(113.7deg, #FF0015 3.64%, #FE5000 50.92%, #FF6A00 97.26%)',
-  bg: theme.colors.black,
-  hoverBg: '#3A3A3A',
-  hoverBorder: '#B2B2B2',
-  focusBorder: '#51A9E8',
-  activeBg: '#222222',
-  activeBorder: '#FFFFFF',
-  success: {
-    background: '#128A09',
-    text: '#1C7013',
-    border: '#309E26'
-  },
-  danger: {
-    background: '#D43F21',
-    text: '#E16443',
-    border: '#AD391F'
-  },
-  warning: {
-    background: '#FACA40',
-    text: '#BC7C00',
-    border: '#895600'
+// build our theme!
+export const theme = (dark = false) => {
+  let colors = colorPalette(dark)
+  let typeography = typeographySchema(colors)
+  let links = linkSchema(colors, typeography)
+  let buttons = buttonSchema(colors, typeography, dark)
+  return {
+    mode: dark ? 'dark' : 'light',
+    colors,
+    typeography,
+    links,
+    buttons,
+    cubicBezier: 'cubic-bezier(0.4, 0.01, 0.165, 0.99)'
   }
 }
+
+export default theme

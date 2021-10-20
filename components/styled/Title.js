@@ -8,7 +8,8 @@ const TitleStyles = styled.h1`
   ${({ theme }) => css({ ...theme.typeography.title1 })};
   font-weight: 950;
   -webkit-text-stroke-width: 2px;
-  -webkit-text-stroke-color: ${({ theme }) => theme.colors.primary};
+  -webkit-text-stroke-color: ${({ theme }) => theme.colors.textPrimary};
+  color: ${({ theme }) => theme.colors.textPrimary};
   font-size: ${({ theme }) => theme.typeography.display1.fontSize};
   letter-spacing: -0.04em;
   white-space: nowrap;
