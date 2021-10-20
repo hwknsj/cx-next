@@ -35,7 +35,9 @@ const Hero = () => {
         <Circle color={'white'} />
       </div>
       <div className='mt-20 mb-20 text-center md:grid md:gap-x-16 lg:gap-x-8 md:mb-28'>
-        <PostTitle subtitle='Everything with style'>Emotion 👩‍🎤</PostTitle>
+        <PostTitle subtitle={<em>everything with style</em>}>
+          Emotion 👩‍🎤
+        </PostTitle>
       </div>
     </HeroStyles>
   )

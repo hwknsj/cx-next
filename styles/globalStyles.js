@@ -4,8 +4,6 @@ import { fontFaces } from '@/styles/fonts'
 import { lighten, darken } from 'polished'
 import facepaint from 'facepaint'
 import { useTheme } from '@/lib/ThemeContext'
-// import tw from 'twin.macro'
-// import styled from '@emotion/styled'
 
 const breakpoints = [320, 360, 375, 600, 959, 960, 1440, 1920]
 
