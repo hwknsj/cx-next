@@ -27,12 +27,17 @@ const colorSchema = {
     indigo: '#304FFE',
     deepPurple: '#651FFF',
     deepOrange: '#FF3d00',
-    kleinBlue: 'rgb(69, 68, 147)',
+    // kleinBlue: 'rgb(69, 68, 147)',
+    kleinBlue: '#002fa7',
     blue: '#0861B5',
     pink: '#FF4081',
     red2: '#FF0015',
     gradient:
       'linear-gradient(113.7deg, #FF0015 3.64%, #FE5000 50.92%, #FF6A00 97.26%)',
+    blueGradient:
+      'linear-gradient(135deg, rgba(0,47,167,1) 0%, rgba(0,74,255,1) 100%)',
+    greenGradient:
+      'linear-gradient(63deg, rgba(18,138,9,1) 25%, rgba(123,232,32,1) 98%)',
     bg: '#FFFFFF',
     hoverBg: '#F5F5F5',
     hoverBorder: '#757575',
@@ -87,6 +92,10 @@ const colorSchema = {
     red2: '#FF0015',
     gradient:
       'linear-gradient(113.7deg, #FF0015 3.64%, #FE5000 50.92%, #FF6A00 97.26%)',
+    blueGradient:
+      'linear-gradient(338deg, rgba(0,74,255,1) 0%, rgba(58,21,180,1) 100%)',
+    greenGradient:
+      'linear-gradient(113.7deg, rgba(18,138,9,1) 25%, rgba(123,232,32,1) 98%)',
     bg: '#111111',
     hoverBg: '#3A3A3A',
     hoverBorder: '#B2B2B2',

@@ -4,36 +4,64 @@ import styled from '@emotion/styled'
 import { useTheme } from '@/lib/ThemeContext'
 
 const HeroStyles = styled.section`
-  width: 100%;
-  max-width: 1580px;
-  margin: 0 auto;
-  .cover {
-    display: inline;
+  max-width: 100vw;
+  display: grid;
+  margin-left: 0;
+  padding-left: 0;
+  left: -50%;
+  /* transform: translateX(-50%); */
+  /* max-width: 1580px; */
+  margin: 0;
+  overflow-x: hidden;
+  /* .cover {
+    max-width: 100vw;
+    min-width: 100vw;
+    display: inline-flex;
+    justify-content: space-evenly;
     height: 620px;
     white-space: nowrap;
     overflow-x: hidden;
     text-align: center;
-    div {
+    span {
       display: inline-flex;
-      margin-right: -15%;
+      margin-right: -16%;
+      transform: translateX(-50%);
     }
+  } */
+`
+
+const CirclesDisplay = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 620px;
+  white-space: nowrap;
+  overflow-x: hidden;
+  span.circle {
+    display: inline-flex;
+    margin-right: -14.285%;
+    margin-left: -14.285%;
   }
 `
 
-const circles = ['black', 'orange', 'red', 'green', 'white']
-
 const Hero = () => {
   const { dark } = useTheme()
+  const circles = [
+    dark ? 'grey5' : 'black',
+    'grey2',
+    'gradient',
+    'red2',
+    dark ? 'greenGradient' : 'green',
+    'blueGradient',
+    'white'
+  ]
   return (
-    <HeroStyles>
-      <div className='mb-8 md:mb-16 cover'>
-        <Circle color={'black'} />
-        <Circle color={'grey2'} />
-        <Circle color={'gradient'} />
-        <Circle color={'red2'} />
-        <Circle color={'green'} />
-        <Circle color={'white'} />
-      </div>
+    <HeroStyles className='h-full'>
+      <CirclesDisplay className='mb-8 md:mb-16 h-full'>
+        {circles.map(color => (
+          <Circle key={color} color={color} className='circle' />
+        ))}
+      </CirclesDisplay>
       <div className='mt-20 mb-20 text-center md:grid md:gap-x-16 lg:gap-x-8 md:mb-28'>
         <PostTitle subtitle={<em>everything with style</em>}>
           Emotion 👩‍🎤

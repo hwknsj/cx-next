@@ -1,4 +1,5 @@
 import { GlobalStyles } from '@/styles/globalStyles'
+import Layout from '@/components/Layout'
 import Head from 'next/head'
 import { GlobalStyles as TWGlobal } from 'twin.macro'
 import { ThemeProvider } from '@/lib/ThemeContext'
@@ -16,7 +17,9 @@ export default function MyApp({ Component, pageProps }) {
       <TWGlobal />
       <ThemeProvider>
         <GlobalStyles />
-        <Component {...pageProps} />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </ThemeProvider>
     </>
   )

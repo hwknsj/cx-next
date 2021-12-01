@@ -28,7 +28,7 @@ const HeroPost = ({ title, coverImage, date, excerpt, author, slug }) => (
           <p className='mb-4 body2'>{excerpt}</p>
         </div>
       </div>
-      <Avatar name={author.name} picture={author.picture} />
+      <Avatar name={author.name} picture={author.picture} imgHeight={'100px'} />
     </div>
   </section>
 )

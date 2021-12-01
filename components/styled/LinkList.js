@@ -24,7 +24,7 @@ export const LinkContainer = styled.ul`
 export const ListItem = styled.li`
   display: inline;
   font-size: ${({ theme }) => theme.typeography.body1.fontSize};
-  font-weight: bold;
+  font-weight: 500;
   color: ${({ theme }) => theme.colors.green};
   a {
     color: ${({ theme }) => theme.colors.primary};

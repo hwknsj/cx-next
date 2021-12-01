@@ -15,27 +15,25 @@ const Post = ({ post, preview }) => {
     return <ErrorPage statusCode={404} />
   }
   return (
-    <Layout preview={preview}>
-      <Container>
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <article className='mb-32'>
-            <Head>
-              <title>{post.title} | Next.js & Emotion</title>
-              <meta property='og:image' content={post.ogImage.url} />
-            </Head>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-              author={post.author}
-            />
-            <PostBody content={post.content} />
-          </article>
-        )}
-      </Container>
-    </Layout>
+    <Container>
+      {router.isFallback ? (
+        <PostTitle>Loading…</PostTitle>
+      ) : (
+        <article className='mb-32'>
+          <Head>
+            <title>{post.title} | Next.js & Emotion</title>
+            <meta property='og:image' content={post.ogImage.url} />
+          </Head>
+          <PostHeader
+            title={post.title}
+            coverImage={post.coverImage}
+            date={post.date}
+            author={post.author}
+          />
+          <PostBody content={post.content} />
+        </article>
+      )}
+    </Container>
   )
 }
 

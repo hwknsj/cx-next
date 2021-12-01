@@ -4,11 +4,11 @@
   "author": {
     "name": "joél torres",
     "email": "joel.torres@nike.com",
-    "url": "https://github.com/jtor94_nike"
+    "url": "https://github.com/jtor94"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jtor94_nike/cx-next.git"
+    "url": "https://github.com/jtor94/cx-next.git"
   },
   "private": true,
   "scripts": {
@@ -25,29 +25,31 @@
     "@emotion/styled": "^11.3.0",
     "classnames": "2.3.1",
     "cloudinary-react": "^1.7.0",
-    "date-fns": "2.24.0",
+    "date-fns": "2.25.0",
     "facepaint": "^1.2.1",
     "gray-matter": "4.0.3",
-    "next": "^11.1.2",
+    "next": "latest",
     "polished": "^4.1.3",
     "react": "^17.0.2",
+    "react-aria": "^3.10.0",
     "react-dom": "^17.0.2",
     "remark": "14.0.1",
-    "remark-html": "15.0.0"
+    "remark-html": "15.0.0",
+    "sharp": "^0.29.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/core": "^7.16.0",
     "@emotion/babel-plugin": "^11.3.0",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-twin": "^1.0.2",
     "eslint": "^7.32.0",
-    "eslint-config-next": "^11.1.2",
+    "eslint-config-next": "^12.0.3",
     "eslint-import-resolver-typescript": "^2.5.0",
     "eslint-plugin-import": "^2.25.2",
     "fs": "^0.0.1-security",
     "prettier": "^2.4.1",
-    "tailwindcss": "^2.2.17",
-    "twin.macro": "^2.8.0"
+    "tailwindcss": "^2.2.19",
+    "twin.macro": "^2.8.1"
   },
   "babelMacros": {
     "twin": {
@@ -56,8 +58,9 @@
     }
   },
   "peerDependencies": {
-    "autoprefixer": "^10.3.7",
-    "postcss": "^8.3.9",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.3.11",
     "typescript": "^4.4.4"
-  }
+  },
+  "packageManager": "yarn@3.1.0"
 }

@@ -33,21 +33,21 @@ const cssStyles = theme => css`
     font-size: 1.6rem;
     color: ${theme.colors.textPrimary};
   }
-  main {
+  /* main {
     ${css(
-      mq({
-        padding: [
-          '0 1rem ',
-          '0 1rem',
-          '0 1rem',
-          '1rem 2rem',
-          '1rem 4rem',
-          '2rem 8rem',
-          '4rem 16rem'
-        ]
-      })
-    )}
-  }
+    mq({
+      padding: [
+        '0 1rem ',
+        '0 1rem',
+        '0 1rem',
+        '1rem 2rem',
+        '1rem 4rem',
+        '2rem 8rem',
+        '4rem 16rem'
+      ]
+    })
+  )}
+  } */
   footer {
     padding: 0;
   }

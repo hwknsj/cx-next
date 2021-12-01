@@ -9,16 +9,16 @@ import Head from 'next/head'
 const EDSPage = ({ allPosts }) => {
   const morePosts = allPosts.slice(1)
   return (
-    <Layout>
+    <>
       <Head>
-        <title>Emotion & Enterprise</title>
+        <title>Nike | Emotion & Enterprise</title>
       </Head>
       <Intro />
       <Hero />
       <Container>
         {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
-    </Layout>
+    </>
   )
 }
 

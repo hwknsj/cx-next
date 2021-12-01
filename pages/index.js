@@ -11,7 +11,7 @@ const Index = ({ allPosts }) => {
   const latestPost = allPosts[0]
   const morePosts = allPosts.slice(1)
   return (
-    <Layout>
+    <>
       <Head>
         <title>CX | Next.js & Emotion</title>
       </Head>
@@ -30,7 +30,7 @@ const Index = ({ allPosts }) => {
         )}
         {morePosts?.length > 0 && <MoreStories posts={morePosts} />}
       </Container>
-    </Layout>
+    </>
   )
 }
 
